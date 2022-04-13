@@ -1,0 +1,95 @@
+body{
+    margin:0;
+    background-image:url("Image/background.jpeg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+a{
+    text-decoration-line:none;
+}
+
+.container{
+    background-color: white;
+    min-height:100vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.input-box{
+    border: 1px solid lightpink;
+    width:800px;
+    margin-left: 0;
+    margin-bottom: 1em;
+}
+
+.plus-button{
+    background-color: lightcoral;
+    border: none;
+    height:28px;
+    width: 28px;
+}
+
+.plus-button:hover{
+    background-color: coral;
+}
+
+.plus-button:active{
+    background-color: lightcoral;
+}
+
+
+.task-area{
+    border:1px solid lightcoral;
+}
+
+.task-tabs{
+    display:flex; 
+    border-bottom:1px solid lightcoral; 
+    position: relative; 
+}
+
+.task-tabs div{
+    padding:1em;
+}
+
+#under-line{
+    height:4px;
+    background-color: pink;
+    position:absolute;
+    width: 60px;
+    left:0px;
+    top:52px;
+    padding:0px;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons{
+    width:20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.fa-check{
+    color:green;
+}
+
+.fa-trash-can{
+    color:red;
+}
+
+.task-done{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    border: 1px solid red;
+    width:1200px;
+    height: 64px;
+    text-decoration:line-through;
+    background-color: lightgray;
+}
