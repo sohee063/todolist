@@ -3,7 +3,7 @@ let addButton=document.getElementById("add-button")
 let taskList=[]
 
 addButton.addEventListener("click",addTask)
-
+todoList.addEventListener("focus",blank)
 
 function addTask(){
     let task ={
@@ -24,7 +24,7 @@ function render(){
             <div class="task-done">${taskList[i].taskContent}</div>
             <div class="icons">
                 <i onclick="toggleComplete('${taskList[i].id}')"class="fa-solid fa-check fa-2x"></i>
-                <i class="fa-solid fa-trash-can fa-2x"></i>
+                <i onclick="deleteTask('${taskList[i].id}')" class="fa-solid fa-trash-can fa-2x"></i>
             </div>
         </div>`;
         }else{
@@ -32,12 +32,11 @@ function render(){
             <div>${taskList[i].taskContent}</div>
             <div class="icons">
                 <i onclick="toggleComplete('${taskList[i].id}')"class="fa-solid fa-check fa-2x"></i>
-                <i class="fa-solid fa-trash-can fa-2x"></i>
+                <i onclick="deleteTask('${taskList[i].id}')" class="fa-solid fa-trash-can fa-2x"></i>
             </div>
         </div>`;
         }
     }
-
     document.getElementById("task-board").innerHTML = resultHTML;
 }
 
@@ -54,7 +53,19 @@ function toggleComplete(id){
 }
 
 
+function deleteTask(id){
+    for(let i=0;i<taskList.length;i++){
+        if(taskList[i].id==id){
+            taskList.splice(i,1)
+            break;
+        }
+    }
+    render();
+}
 
+function blank(){
+    todoList.value=""
+}
 
 
 function randomIDGenerate(){
