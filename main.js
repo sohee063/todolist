@@ -7,8 +7,13 @@ let clickfinished=document.getElementById("finished")
 let taskAll=[]
 let taskIng=[]
 let taskFinished=[]
+let underline=document.getElementById("under-line")
+let underlinemenu=document.querySelectorAll("nav:first-child div")
+
+underlinemenu.forEach(menu=>menu.addEventListener("click",(e)=>underlineindicator(e)))
 
 addButton.addEventListener("click",addTask)
+todoList.addEventListener("keypress",enter)
 todoList.addEventListener("focus",blank)
 clickall.addEventListener("click",render)
 clicking.addEventListener("click",alling)
@@ -85,7 +90,7 @@ function blank(){
 }
 
 
-function alling(){
+function allfinished(){
     let resultHTML = "";
     for(let i=0;i<taskIng.length;i++){
         resultHTML+=`<div class="task">
@@ -102,7 +107,7 @@ function alling(){
     
 }
 
-function allfinished(){
+function alling(){
     let resultHTML = "";
     for(let i=0;i<taskList.length;i++){
         if(!taskList[i].isComplete){
@@ -122,6 +127,22 @@ function allfinished(){
     
     document.getElementById("task-board").innerHTML = resultHTML;
 
+}
+
+function enter(){
+    
+        if(window.event.keyCode === 13){
+            addTask();
+            console.log("엔터!")
+        }
+    }
+
+
+function underlineindicator(e){
+    underline.style.left=(e.currentTarget.offsetLeft+5)+ "px";
+    underline.style.width=(e.currentTarget.offsetWidth-10) + "px";
+    underline.style.top=
+    e.currentTarget.offsetTop + 40 + "px";
 }
 
 function randomIDGenerate(){

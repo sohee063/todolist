@@ -44,23 +44,27 @@ a{
 
 .task-tabs{
     display:flex; 
-    border-bottom:1px solid lightcoral; 
     position: relative; 
 }
 
 .task-tabs div{
     padding:1em;
+    cursor:pointer
 }
+
 
 #under-line{
     height:4px;
     background-color: pink;
     position:absolute;
-    width: 60px;
+    width: 50px;
     left:0px;
-    top:52px;
+    top:40px;
     padding:0px;
+    transition: 0.5s;
 }
+
+
 
 .task{
     display: flex;
@@ -76,6 +80,7 @@ a{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor:pointer
 }
 
 
